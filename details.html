@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <a href="admin.html" class="back-button">← Back to Team</a>
+    <div id="detailsContainer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let selectedMember = localStorage.getItem("selectedMember");
+            console.log('selectedMember' , selectedMember);
+            if (selectedMember) {
+                selectedMember = JSON.parse(selectedMember);
+                
+                let detailsContainer = document.getElementById("detailsContainer");
+                console.log('detailsContainer' , detailsContainer)
+                detailsContainer.innerHTML = `
+                    <div class="card">
+                        <h2>${selectedMember.name}</h2>
+                        <p><strong>Age:</strong> ${selectedMember.age}</p>
+                        <p><strong>Occupation:</strong> ${selectedMember.occupation}</p>
+                        <p><strong>Address:</strong> ${selectedMember.address.street}, ${selectedMember.address.city}, ${selectedMember.address.state}</p>
+                    </div>
+                    <h3>Team Members</h3>
+                    ${selectedMember.teamMembers.length > 0 ? selectedMember.teamMembers.map(member => `
+                        <div class="card">
+                            <h2>${member.name}</h2>
+                            <p><strong>Age:</strong> ${member.age}</p>
+                            <p><strong>Occupation:</strong> ${member.occupation}</p>
+                            <p><strong>Address:</strong> ${member.address.street}, ${member.address.city}, ${member.address.state}</p>
+                        </div>
+                    `).join('') : '<p>No team members</p>'}
+                `;
+            } else {
+                document.getElementById("detailsContainer").innerHTML = "<p>No details available.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

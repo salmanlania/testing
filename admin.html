@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Team Members</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="teamTableBody"></tbody>
+    </table>
+    
+    <script>
+        let arr = [
+            {
+                name: 'John',
+                age: 20,
+                occupation: 'Developer',
+                address: { street: '123 Main St', city: 'Anytown', state: 'CA' },
+                teamMembers: [
+                    { name: 'Jane', age: 25, occupation: 'Teacher', address: { street: '456 Elm St', city: 'Othertown', state: 'NY' } }
+                ]
+            },
+            {
+                name: 'Jane',
+                age: 25,
+                occupation: 'Teacher',
+                address: { street: '456 Elm St', city: 'Othertown', state: 'NY' },
+                teamMembers: []
+            },
+            {
+                name: 'Bob',
+                age: 30,
+                occupation: 'Engineer',
+                address: { street: '789 Oak St', city: 'Thistown', state: 'TX' },
+                teamMembers: [
+                    { name: 'Alice', age: 28, occupation: 'Designer', address: { street: '101 Pine St', city: 'Newcity', state: 'WA' } }
+                ]
+            }
+        ];
+
+        function loadTable() {
+            let tableBody = document.getElementById('teamTableBody');
+            tableBody.innerHTML = '';
+            arr.forEach((item, index) => {
+                let row = `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                    <td>${item.occupation}</td>
+                    <td>${item.address.street}, ${item.address.city}, ${item.address.state}</td>
+                    <td><button onclick="viewDetails(${index})">View Details</button></td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function viewDetails(index) {
+            localStorage.setItem('selectedMember', JSON.stringify(arr[index]));
+            window.location.href = 'details.html';
+        }
+
+        loadTable();
+    </script>
+</body>
+</html>

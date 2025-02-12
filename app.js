@@ -82,10 +82,169 @@
 // console.log(a)
 // console.log(b)
 
-let arr = [1, 2, 3, 4, 5, 6]
-for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
-    console.log('element' , element)
-    console.log('index' , i)
-    console.log('element Index ', element * i)
-}
+// let arr = [1, 2, 3, 4, 5, 6]
+// let i;
+// let element;
+// for (i = 0; i < arr.length; i++) {
+//     element = arr[i];
+//     console.log('element' , element)
+//     console.log('index' , i)
+//     console.log('element Index ', element * i)
+// }
+// console.log('loop' , i)
+// console.log('loop element' , element)
+
+// let arr = [{
+//     name: 'John',
+//     age: 20,
+//     occupation: 'Developer',
+//     address: {
+//         street: '123 Main St',
+//         city: 'Anytown',
+//         state: 'CA',
+//     },
+//     teamMembers: [
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//     ]
+// },
+// {
+//     name: 'Jane',
+//     age: 25,
+//     occupation: 'Teacher',
+//     address: {
+//         street: '456 Elm St',
+//         city: 'Othertown',
+//         state: 'NY',
+//     },
+//     teamMembers: [
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//     ]
+// },
+// {
+//     name: 'Bob',
+//     age: 30,
+//     occupation: 'Engineer',
+//     address: {
+//         street: '789 Oak St',
+//         city: 'Thistown',
+//         state: 'TX',
+//     },
+//     teamMembers: [
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//         {
+//             name: 'Jane',
+//             age: 25,
+//             occupation: 'Teacher',
+//             address: {
+//                 street: '456 Elm St',
+//                 city: 'Othertown',
+//                 state: 'NY',
+//             },
+//         },
+//     ]
+// },
+// ]
+// arr.forEach((item) => {
+//     console.log(item.name)
+//     console.log(item.age)
+//     console.log(item.occupation)
+//     console.log(item.address.street)
+//     console.log(item.address.city)
+//     console.log(item.address.state)
+//     item.teamMembers.forEach((member) => {
+//         console.log(member.name)
+//         console.log(member.age)
+//         console.log(member.occupation)
+//         console.log(member.address.street)
+//         console.log(member.address.city)
+//         console.log(member.address.state)
+//     })
+// })
+const arr = [1, 2, 3];
+
+arr[3] = 4;
+arr[4] = 5;
+arr[5] = 6;
+arr[6] = 7;
+arr[7] = 8;
+arr[8] = 9;
+arr[9] = 10;
+console.log(arr.length);
+console.log(arr);
